@@ -12,10 +12,10 @@ import java.util.HashMap;
 
 public class Model {	
 	
-	public HashMap questionMap;
+	public HashMap<String, Question> questionMap;
 
 	public Model() {
-	HashMap<String, Question> questionMap = new HashMap<String, Question>();
+	questionMap = new HashMap<String, Question>();
 	
 	Question q1 = new Question("Climate");
 	q1.setContent("Do you prefer hot Climate to Cold Climate?");
