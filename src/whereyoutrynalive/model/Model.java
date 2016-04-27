@@ -15,6 +15,10 @@ public class Model {
 	public HashMap<String, Question> questionMap;
 
 	public Model() {
+		CityModel.makeCities();
+		
+		
+		
 	questionMap = new HashMap<String, Question>();
 	
 	Question q1 = new Question("Climate");

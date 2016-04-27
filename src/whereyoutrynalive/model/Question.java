@@ -20,6 +20,7 @@ public class Question {
 	public String getContent() {
 		return content;
 	}
+	
 	public void setContent(String content) {
 		this.content = content;
 	}
@@ -27,6 +28,7 @@ public class Question {
 	public String getAbbrev() {
 		return abbrev;
 	}
+	
 	public void setAbbrev(String abbrev) {
 		this.abbrev = abbrev;
 	}
