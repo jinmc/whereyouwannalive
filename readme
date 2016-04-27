@@ -1,0 +1,31 @@
+We are trying to make a java application basically tells you where you want to live.
+
+We will ask you five questions,
+and you can select five questions by the order you care the more.
+
+So, we would ask the question you care the most first and ask the question later 
+which you care less.
+
+By asking the questions, we are going through a decision tree which will be a 
+completely balanced tree, of a height of 6, so with 5 questions.
+We will have 32 cities in total, and by going through each questions, 
+we would make our candidates of cities in half. 
+So after the first question, the candidate city numbers will be 16,
+after the second question, 8, 4, 2, and after the fifth question,
+only one candidate city will be left, which will be the city you would like to live most.
+
+The beauty of this algorithm is that every single choice you make will differentiate
+the final answer, so we can have 32 different answers by total.
+Also, we would be able to rank the cities by the choices you have made,
+from 1 to 32.
+
+We would like to connect this data to google API and then mark the cities 
+by rank.
+
+We are doing it for 32 cities in this project but it is quite easy to make it into 64, 128, 256, 512 
+cities if we have the right dataset.
+
+
+Jinmo's part would be designing the algorithm, making the model and controller,
+and Jon's part would be getting the data, and handling the gui parts so the view.
+We would work together for the google map API part.
