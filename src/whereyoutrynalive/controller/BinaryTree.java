@@ -9,9 +9,9 @@ public class BinaryTree {
 	private Node root;
 	public ArrayList<CityArea> data;
 	
-	public BinaryTree(ArrayList<CityArea> rootData) {
+	public BinaryTree(ArrayList<CityArea> data) {
 		root = new Node();
-		root.data = rootData;
+		this.data = data;
 //		root.left = left.root;
 //		root.right = right.root;
 	}

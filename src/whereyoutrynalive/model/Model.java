@@ -54,9 +54,10 @@ public class Model {
 	
 	public ArrayList<CityArea> makeCities(ArrayList<String> list){
 		ArrayList<CityArea> cityData = new ArrayList<CityArea>();
-		CityArea city = new CityArea();
+		
 		String cvsSplitBy = ",";
 		for (String string : list){
+			CityArea city = new CityArea();
 			String[] data = string.split(cvsSplitBy);
 			city.setCityName(data[0]);
 			city.setPopulationDensity(Double.valueOf(data[1]));

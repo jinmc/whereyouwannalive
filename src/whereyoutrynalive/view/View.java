@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import whereyoutrynalive.controller.Controller;
+import whereyoutrynalive.model.CityArea;
 import whereyoutrynalive.model.Model;
 import whereyoutrynalive.model.Question;
 
@@ -96,6 +97,9 @@ public class View extends JFrame {
  				questionContentLabel.setText(thisQuestion);
  				}
  				System.out.println(controller.questionCount);
+// 				for (CityArea c : controller.BT.data) {
+// 					System.out.println(c.getCityName());
+// 				}
  			}
  		});
  		

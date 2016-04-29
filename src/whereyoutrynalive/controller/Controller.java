@@ -15,16 +15,28 @@ public class Controller {
 	public int priorityCount = 0;
 	public int questionCount = 0;
 	public int booleanCount = 0;
-	ArrayList<CityArea> cities;
+//	ArrayList<CityArea> cities;
+	
+
 	
 	public Question[] questionArray;
 	public boolean[] answerArray;
+	
+	public BinaryTree BT;
 
 	public Controller(Model model) {
+		File selectedFile = model.start();
+		ArrayList<String> rawData = model.readFile(selectedFile);
+		ArrayList<CityArea> cities = model.makeCities(rawData);
+		for (CityArea city : cities){
+			System.out.println(city.getCityName());
+		}
+		
 		this.model = model;
 		questionArray = new Question[5];
 		answerArray = new boolean[5];
 		
+		BT = new BinaryTree(cities);
 		
 		
 	}
@@ -32,9 +44,8 @@ public class Controller {
 	public static void main(String[] args) {
 		
 		Model model = new Model();
-		File selectedFile = model.start();
-		ArrayList<String> rawData = model.readFile(selectedFile);
-		ArrayList<CityArea> cities = model.makeCities(rawData); 
+		
+		 
 		Controller controller = new Controller(model);
 
 		View view = new View(model, controller);
