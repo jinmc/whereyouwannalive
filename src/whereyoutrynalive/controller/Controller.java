@@ -13,8 +13,6 @@ public class Controller {
 	public int questionCount = 0;
 	
 	public Question[] questionArray;
-	
-	
 
 	public Controller(Model model) {
 		this.model = model;
