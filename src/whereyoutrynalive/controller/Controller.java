@@ -7,18 +7,22 @@ import whereyoutrynalive.view.View;
 
 public class Controller {
 	
-	//testtesttest
 	
 	Model model;
 //	View view = new View(model, this);
 	public int priorityCount = 0;
 	public int questionCount = 0;
+	public int booleanCount = 0;
 	
 	public Question[] questionArray;
+	public boolean[] answerArray;
 
 	public Controller(Model model) {
 		this.model = model;
 		questionArray = new Question[5];
+		answerArray = new boolean[5];
+		
+		
 		
 	}
 
@@ -30,6 +34,7 @@ public class Controller {
 		View view = new View(model, controller);
 
 		view.display1();
+		
 		
 	}
 

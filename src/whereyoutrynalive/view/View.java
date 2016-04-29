@@ -83,6 +83,38 @@ public class View extends JFrame {
 	
 
 	private void attachListenersToComponents2() {
+ 		yesButton.addActionListener(new ActionListener() {
+ 			@Override
+ 			public void actionPerformed(ActionEvent event) {
+ 				if (controller.questionCount == 5) {
+ 					
+ 				}else {
+ 				controller.answerArray[controller.booleanCount] = true;
+ 				controller.booleanCount++;
+ 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
+ 				controller.questionCount++;
+ 				questionContentLabel.setText(thisQuestion);
+ 				}
+ 				System.out.println(controller.questionCount);
+ 			}
+ 		});
+ 		
+ 		noButton.addActionListener(new ActionListener() {
+ 			@Override
+ 			public void actionPerformed(ActionEvent event) {
+ 				if (controller.questionCount == 5) {
+ 					
+ 				} else {
+ 				controller.answerArray[controller.booleanCount] = false;
+ 				controller.booleanCount++;
+ 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
+ 				controller.questionCount++;
+ 				questionContentLabel.setText(thisQuestion);
+ 				}
+ 				System.out.println(controller.questionCount);
+ 			}
+ 		});
+ 		
  		
 	}
 
