@@ -1,0 +1,33 @@
+City,Density,Average Temp,Cost of Living,Job Growth,"Violent Crime per 100,000 people"
+New York-Northern New Jersey-Long Island NY-NJ-PA Metro Area,31251.40,54.3,154.8,-0.02,597
+Los Angeles-Long Beach-Santa Ana CA Metro Area,12113.90,63.2,137.9,-0.08,491
+Chicago-Joliet-Naperville IL-IN-WI Metro Area,8613.40,47.7,107.4,-0.06,884
+Dallas-Fort Worth-Arlington TX Metro Area,3909.30,64.6,94,0,665
+Philadelphia-Camden-Wilmington PA-NJ-DE-MD Metro Area,7773.20,55,117.1,-0.04,1021
+Houston-Sugar Land-Baytown TX Metro Area,4109.60,67.7,89.5,0.03,991
+Washington-Arlington-Alexandria DC-VA-MD-WV Metro Area,6388.10,57.1,136.3,0,1185
+Miami-Fort Lauderdale-Pompano Beach FL Metro Area,7395.30,75.9,109.1,-0.08,1060
+Atlanta-Sandy Springs-Marietta GA Metro Area,2173.00,61.4,97.6,-0.07,1227
+Boston-Cambridge-Quincy MA-NH Metro Area,7980.10,51.6,139.4,-0.01,725
+San Francisco-Oakland-Fremont CA Metro Area,12144.90,56.1,149.5,-0.05,795
+Detroit-Warren-Livonia MI Metro Area,3800.40,49,93.8,-0.12,1989
+Riverside-San Bernardino-Ontario CA Metro Area,4299.60,64.4,117.2,-0.12,433
+Phoenix-Mesa-Glendale AZ Metro Area,4394.90,73.5,96.6,-0.1,572
+Seattle-Tacoma-Bellevue WA Metro Area,4721.60,53.1,111.7,-0.04,603
+Minneapolis-St. Paul-Bloomington MN-WI Metro Area,3383.40,43.2,110.7,-0.04,1012
+San Diego-Carlsbad-San Marcos CA Metro Area,6920.50,64.4,130.8,-0.06,381
+St. Louis MO-IL Metro Area,2742.50,54.9,91.2,-0.06,1679
+Tampa-St. Petersburg-Clearwater FL Metro Area,3323.00,71.9,91.9,-0.12,582
+Baltimore-Towson MD Metro Area,5435.70,54.4,119.2,-0.03,1338
+Denver-Aurora-Broomfield CO Metro Area,4803.70,51.3,105.1,-0.02,599
+Pittsburgh PA Metro Area,2990.80,50.1,94.9,-0.01,798
+Portland-Vancouver-Hillsboro OR-WA Metro Area,4372.60,54,104.6,-0.04,473
+Sacramento--Arden-Arcade--Roseville CA Metro Area,4538.50,60.9,116.3,-0.1,614
+San Antonio-New Braunfels TX Metro Area,3475.40,67.3,92.5,0.04,539
+Orlando-Kissimmee-Sanford FL Metro Area,2774.60,71.9,97.3,-0.07,901
+Cincinnati-Middletown OH-KY-IN Metro Area,2563.60,48.8,91.5,-0.06,905
+Cleveland-Elyria-Mentor OH Metro Area,3808.40,48.8,101.5,-0.08,1334
+Kansas City MO-KS Metro Area,2326.10,52.7,99.5,-0.04,1251
+Las Vegas-Paradise NV Metro Area,6527.20,69.1,100.2,-0.14,841
+San Jose-Sunnyvale-Santa Clara CA Metro Area,8417.70,64.4,150.5,-0.04,321
+Columbus OH Metro Area,3186.00,51.7,90.3,-0.03,549
