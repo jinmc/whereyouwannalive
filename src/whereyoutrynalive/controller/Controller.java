@@ -7,6 +7,8 @@ import whereyoutrynalive.view.View;
 
 public class Controller {
 	
+	//testtesttest
+	
 	Model model;
 //	View view = new View(model, this);
 	public int priorityCount = 0;
