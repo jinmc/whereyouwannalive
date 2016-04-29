@@ -1,7 +1,13 @@
 package whereyoutrynalive.model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.swing.JFileChooser;
 
 /**
  * This is the model class.
@@ -14,8 +20,60 @@ public class Model {
 	
 	public HashMap<String, Question> questionMap;
 
+	public File start(){
+		
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		int result = fileChooser.showOpenDialog(null);
+		File selectedFile = null;
+		if (result == JFileChooser.APPROVE_OPTION) {
+			selectedFile = fileChooser.getSelectedFile();
+		}
+		return selectedFile;
+		
+	}
+	
+	public ArrayList<String> readFile(File file) {
+		ArrayList<String> al = new ArrayList<String>();
+		try {
+			if (file.exists()) {
+				FileReader fr = new FileReader(file);
+				BufferedReader br = new BufferedReader(fr);
+				String line;
+				br.readLine();
+				while((line = br.readLine()) != null) {
+					al.add(line);
+					System.out.println(line);
+				}
+				br.close();
+			}
+		} catch (IOException e) {	
+			}
+		return al;
+		}
+	
+	public ArrayList<CityArea> makeCities(ArrayList<String> list){
+		ArrayList<CityArea> cityData = new ArrayList<CityArea>();
+		CityArea city = new CityArea();
+		String cvsSplitBy = ",";
+		for (String string : list){
+			String[] data = string.split(cvsSplitBy);
+			city.setCityName(data[0]);
+			city.setPopulationDensity(Double.valueOf(data[1]));
+			city.setTemperature(Double.valueOf(data[2]));
+			city.setCostOfLiving(Double.valueOf(data[3]));
+			city.setCrimeRate(Double.valueOf(data[4]));
+			System.out.println(city.getCityName());
+			System.out.println(city.getCrimeRate());
+			cityData.add(city);
+		}
+		return cityData;
+	}
+	
+	
 	public Model() {
-		CityModel.makeCities();
+		CityModel.makeCities();	
+		
 		
 		
 		
