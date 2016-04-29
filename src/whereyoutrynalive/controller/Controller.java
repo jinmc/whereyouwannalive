@@ -1,6 +1,5 @@
 package whereyoutrynalive.controller;
 
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -11,16 +10,12 @@ import whereyoutrynalive.view.View;
 
 public class Controller {
 	
-	
 	Model model;
 //	View view = new View(model, this);
 	public int priorityCount = 0;
-<<<<<<< HEAD
 	public int questionCount = 0;
 	public int booleanCount = 0;
-=======
-	public int questionCount = 0;	
->>>>>>> 11c308f6b8bca2f686ae682fc923c608741b3daf
+	ArrayList<CityArea> cities;
 	
 	public Question[] questionArray;
 	public boolean[] answerArray;
@@ -45,6 +40,7 @@ public class Controller {
 		View view = new View(model, controller);
 
 		view.display1();
+		
 		
 		
 	}
