@@ -3,11 +3,11 @@ package whereyoutrynalive.model;
 public class CityArea {
 	
 	private String cityName;
-	private int temperature;
-	private int populationDensity;
-	private int jobOpportunity;
-	private int costOfLiving;
-	private int crimeRate;
+	private Double temperature;
+	private Double populationDensity;
+	private Double jobGrowth;
+	private Double costOfLiving;
+	private Double crimeRate;
 	
 	public String getCityName() {
 		return cityName;
@@ -16,13 +16,18 @@ public class CityArea {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
+<<<<<<< HEAD
 	
 	public int getTemperature() {
+=======
+	public Double getTemperature() {
+>>>>>>> 11c308f6b8bca2f686ae682fc923c608741b3daf
 		return temperature;
 	}
-	public void setTemperature(int temperature) {
+	public void setTemperature(Double temperature) {
 		this.temperature = temperature;
 	}
+<<<<<<< HEAD
 	
 	public int getPopulationDensity() {
 		return populationDensity;
@@ -53,6 +58,30 @@ public class CityArea {
 	}
 	
 	public void setCrimeRate(int crimeRate) {
+=======
+	public Double getPopulationDensity() {
+		return populationDensity;
+	}
+	public void setPopulationDensity(Double populationDensity) {
+		this.populationDensity = populationDensity;
+	}
+	public Double getJobOpportunity() {
+		return jobGrowth;
+	}
+	public void setJobOpportunity(Double jobOpportunity) {
+		this.jobGrowth = jobOpportunity;
+	}
+	public Double getCostOfLiving() {
+		return costOfLiving;
+	}
+	public void setCostOfLiving(Double costOfLiving) {
+		this.costOfLiving = costOfLiving;
+	}
+	public Double getCrimeRate() {
+		return crimeRate;
+	}
+	public void setCrimeRate(Double crimeRate) {
+>>>>>>> 11c308f6b8bca2f686ae682fc923c608741b3daf
 		this.crimeRate = crimeRate;
 	}
 	
