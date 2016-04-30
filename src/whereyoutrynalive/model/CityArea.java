@@ -45,6 +45,7 @@ public class CityArea {
 	public void setCrimeRate(Double crimeRate) {
 		this.crimeRate = crimeRate;
 	}
+
 	
 
 	

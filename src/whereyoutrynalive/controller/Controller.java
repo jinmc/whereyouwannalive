@@ -17,8 +17,6 @@ public class Controller {
 	public int booleanCount = 0;
 	ArrayList<CityArea> cities;
 	
-
-	
 	public Question[] questionArray;
 	public boolean[] answerArray;
 	
@@ -129,7 +127,9 @@ public class Controller {
 
 	public static void main(String[] args) {
 		
+
 		Model model = new Model();	 
+
 		Controller controller = new Controller(model);
 		View view = new View(model, controller);
 		view.display1();
