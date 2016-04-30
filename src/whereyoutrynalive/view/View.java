@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -40,10 +41,15 @@ public class View extends JFrame {
 	JLabel finalLabel;
 	JTextArea questionArea;
 	JTextArea finalTextArea;
+	JTextField finalTextField;
+	
+	ArrayList<CityArea> finalList;
 	
 	public View(Model model, Controller controller) {
 		this.model = model;
 		this.controller = controller;
+		
+		this.finalList = new ArrayList<CityArea>();
 		
 		priorityButtonPanel = new JPanel();
 		priorityTextPanel = new JPanel();
@@ -66,6 +72,8 @@ public class View extends JFrame {
 		priority = new JLabel("This is the order you would care the most.");
 		questionArea = new JTextArea(10, 50);
 		finalTextArea = new JTextArea(100, 500);
+		
+		finalTextField = new JTextField();
 
 	}
 	
@@ -137,7 +145,11 @@ public class View extends JFrame {
 		finalPanel.add(finalLabel);
 //		String finalAnswer = something;
 //		finalTextArea.setText(finalAnswer);
-		finalPanel.add(finalTextArea);
+		
+		String finalAnswer = finalList.get(0).getCityName();
+		System.out.println(finalAnswer);
+		finalTextField.setText(finalAnswer);
+		finalPanel.add(finalTextField);
 		
 	}
 	
@@ -147,6 +159,9 @@ public class View extends JFrame {
  			@Override
  			public void actionPerformed(ActionEvent event) {
  				if (controller.questionCount == 5) {
+ 	 				controller.answerArray[controller.booleanCount] = true;
+ 	 				controller.booleanCount++;
+ 	 				finalList = controller.topHalf(finalList, controller.questionArray[controller.questionCount - 1].getAbbrev(), true);
  	        		getContentPane().removeAll();
  	        		display3();
  				} else {
@@ -155,6 +170,11 @@ public class View extends JFrame {
  				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
  				controller.questionCount++;
  				questionContentLabel.setText(thisQuestion);
+ 				if (controller.questionCount - 2 == 0) {
+ 					finalList = controller.cities;
+ 				}
+ 				System.out.println(controller.questionCount - 1);
+ 				finalList = controller.topHalf(finalList, controller.questionArray[controller.questionCount - 1].getAbbrev(), true);
 // 				controller.BT.addLeft(controller.BT.data, controller.sortData(controller.booleanCount));
 // 				controller.BT.addright(controller.BT.data, controller.sortData(controller.booleanCount));
  				}
@@ -169,6 +189,9 @@ public class View extends JFrame {
  			@Override
  			public void actionPerformed(ActionEvent event) {
  				if (controller.questionCount == 5) {
+ 	 				controller.answerArray[controller.booleanCount] = false;
+ 	 				controller.booleanCount++;
+ 	 				finalList = controller.topHalf(finalList, controller.questionArray[controller.questionCount - 1].getAbbrev(), false);
  	        		getContentPane().removeAll();
  	        		display3();
  				} else {
@@ -177,6 +200,11 @@ public class View extends JFrame {
  				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
  				controller.questionCount++;
  				questionContentLabel.setText(thisQuestion);
+ 				if (controller.questionCount - 2 == 0) {
+ 					finalList = controller.cities;
+ 				}
+ 				System.out.println(controller.questionCount - 1);
+ 				finalList = controller.topHalf(finalList, controller.questionArray[controller.questionCount - 1].getAbbrev(), false);
 // 				controller.BT.addLeft(controller.BT.data, controller.sortData(controller.booleanCount));
 // 				controller.BT.addright(controller.BT.data, controller.sortData(controller.booleanCount));
  				}

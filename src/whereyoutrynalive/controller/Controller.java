@@ -15,7 +15,7 @@ public class Controller {
 	public int priorityCount = 0;
 	public int questionCount = 0;
 	public int booleanCount = 0;
-	ArrayList<CityArea> cities;
+	public ArrayList<CityArea> cities;
 	
 	public Question[] questionArray;
 	public boolean[] answerArray;
