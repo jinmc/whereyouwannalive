@@ -135,8 +135,8 @@ public class View extends JFrame {
 		this.add(finalPanel);
 //		finalLabel = new JLabel(finalString);
 		finalPanel.add(finalLabel);
-		String finalAnswer = something;
-		finalTextArea.setText(finalAnswer);
+//		String finalAnswer = something;
+//		finalTextArea.setText(finalAnswer);
 		finalPanel.add(finalTextArea);
 		
 	}

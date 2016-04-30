@@ -73,7 +73,6 @@ public class Model {
 	
 	
 	public Model() {
-		CityModel.makeCities();	
 		
 		
 		
