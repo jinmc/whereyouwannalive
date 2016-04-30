@@ -2,6 +2,7 @@ package whereyoutrynalive.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,6 +15,7 @@ import whereyoutrynalive.model.Question;
 
 public class View extends JFrame {
 	
+	private static final LayoutManager FlowLayout = null;
 	Model model = new Model();
 	Controller controller;
 	
@@ -25,7 +27,7 @@ public class View extends JFrame {
 	JButton yesButton;
 	JButton noButton;
 	JPanel cityPanel;
-	
+	JPanel finalPanel;
 	
 	JButton qbutton1;
 	JButton qbutton2;
@@ -35,7 +37,9 @@ public class View extends JFrame {
 	JButton nextButton;
 	JLabel questionLabel;
 	JLabel priority;
+	JLabel finalLabel;
 	JTextArea questionArea;
+	JTextArea finalTextArea;
 	
 	public View(Model model, Controller controller) {
 		this.model = model;
@@ -49,7 +53,9 @@ public class View extends JFrame {
 		yesButton = new JButton("Yes");
 		noButton = new JButton("No");
 		cityPanel = new JPanel();
-		
+		finalPanel = new JPanel();
+		finalLabel = new JLabel("This is the number one city that you would want to live in.");
+				
 		qbutton1 = new JButton("Climate");
 		qbutton2 = new JButton("Cost of Living");
 		qbutton3 = new JButton("Population Density");
@@ -59,7 +65,8 @@ public class View extends JFrame {
 		questionLabel = new JLabel("Which factor do you care the most? Click all 5 in the order of what you care most.");
 		priority = new JLabel("This is the order you would care the most.");
 		questionArea = new JTextArea(10, 50);
-		
+		finalTextArea = new JTextArea(100, 500);
+
 	}
 	
 	
@@ -71,7 +78,7 @@ public class View extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	public void display2() {
+	private void display2() {
 		revalidate();
 		repaint();
         layOutComponents2();
@@ -79,49 +86,38 @@ public class View extends JFrame {
         setSize(600, 600);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	}	
 	
 	
-
-	private void attachListenersToComponents2() {
- 		yesButton.addActionListener(new ActionListener() {
- 			@Override
- 			public void actionPerformed(ActionEvent event) {
- 				if (controller.questionCount == 5) {
- 					
- 				}else {
- 				controller.answerArray[controller.booleanCount] = true;
- 				controller.booleanCount++;
- 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
- 				controller.questionCount++;
- 				questionContentLabel.setText(thisQuestion);
- 				}
- 				System.out.println(controller.questionCount);
-// 				for (CityArea c : controller.BT.data) {
-// 					System.out.println(c.getCityName());
-// 				}
- 			}
- 		});
- 		
- 		noButton.addActionListener(new ActionListener() {
- 			@Override
- 			public void actionPerformed(ActionEvent event) {
- 				if (controller.questionCount == 5) {
- 					
- 				} else {
- 				controller.answerArray[controller.booleanCount] = false;
- 				controller.booleanCount++;
- 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
- 				controller.questionCount++;
- 				questionContentLabel.setText(thisQuestion);
- 				}
- 				System.out.println(controller.questionCount);
- 			}
- 		});
- 		
- 		
+	private void display3() {
+		revalidate();
+		repaint();	
+        layOutComponents3();
+//        attachListenersToComponents3();
+        setSize(600, 600);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
+	
+	private void layOutComponents1() {
+    	this.setLayout(new GridLayout(2, 1));
+    	this.add(priorityButtonPanel);
+//    	panel1.setBorder(new TitledBorder("Checks"));
+    	priorityButtonPanel.add(questionLabel);
+//    	priorityButtonPanel.setBorder(new TitledBorder("buttons"));
+    	priorityButtonPanel.add(qbutton1);
+    	priorityButtonPanel.add(qbutton2);
+    	priorityButtonPanel.add(qbutton3);
+    	priorityButtonPanel.add(qbutton4);
+    	priorityButtonPanel.add(qbutton5);
+    	
+    	this.add(priorityTextPanel);
+    	priorityTextPanel.add(priority);
+    	priorityTextPanel.add(nextButton);
+    	nextButton.setEnabled(false);
+    	priorityTextPanel.add(questionArea);
+    }
+	
 	private void layOutComponents2() {
     	this.setLayout(new GridLayout(3, 1));
     	this.add(questionPanel);
@@ -133,6 +129,63 @@ public class View extends JFrame {
     	questionButtonPanel.add(yesButton);
     	questionButtonPanel.add(noButton);
 	}
+	
+	private void layOutComponents3() {
+//		this.setLayout(new LayoutManager());
+		this.add(finalPanel);
+//		finalLabel = new JLabel(finalString);
+		finalPanel.add(finalLabel);
+		String finalAnswer = something;
+		finalTextArea.setText(finalAnswer);
+		finalPanel.add(finalTextArea);
+		
+	}
+	
+
+	private void attachListenersToComponents2() {
+ 		yesButton.addActionListener(new ActionListener() {
+ 			@Override
+ 			public void actionPerformed(ActionEvent event) {
+ 				if (controller.questionCount == 5) {
+ 	        		getContentPane().removeAll();
+ 	        		display3();
+ 				} else {
+ 				controller.answerArray[controller.booleanCount] = true;
+ 				controller.booleanCount++;
+ 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
+ 				controller.questionCount++;
+ 				questionContentLabel.setText(thisQuestion);
+// 				controller.BT.addLeft(controller.BT.data, controller.sortData(controller.booleanCount));
+// 				controller.BT.addright(controller.BT.data, controller.sortData(controller.booleanCount));
+ 				}
+// 				System.out.println(controller.questionCount);
+// 				for (CityArea c : controller.BT.data) {
+// 					System.out.println(c.getCityName());
+// 				}
+ 			}
+ 		});
+ 		
+ 		noButton.addActionListener(new ActionListener() {
+ 			@Override
+ 			public void actionPerformed(ActionEvent event) {
+ 				if (controller.questionCount == 5) {
+ 	        		getContentPane().removeAll();
+ 	        		display3();
+ 				} else {
+ 				controller.answerArray[controller.booleanCount] = false;
+ 				controller.booleanCount++;
+ 				String thisQuestion = controller.questionArray[controller.questionCount].getContent();
+ 				controller.questionCount++;
+ 				questionContentLabel.setText(thisQuestion);
+// 				controller.BT.addLeft(controller.BT.data, controller.sortData(controller.booleanCount));
+// 				controller.BT.addright(controller.BT.data, controller.sortData(controller.booleanCount));
+ 				}
+// 				System.out.println(controller.questionCount);
+ 			}
+ 		});
+ 		
+	}
+
 	
 	private void attachListenersToComponents() {
         qbutton1.addActionListener(new ActionListener() {
@@ -209,7 +262,6 @@ public class View extends JFrame {
         	@Override
         	public void actionPerformed(ActionEvent event) {
         		
-        		
         		getContentPane().removeAll();
         		display2();
         	}
@@ -228,24 +280,5 @@ public class View extends JFrame {
 	}
 
 
-	private void layOutComponents1() {
-    	this.setLayout(new GridLayout(2, 1));
-    	this.add(priorityButtonPanel);
-//    	panel1.setBorder(new TitledBorder("Checks"));
-    	priorityButtonPanel.add(questionLabel);
-//    	priorityButtonPanel.setBorder(new TitledBorder("buttons"));
-    	priorityButtonPanel.add(qbutton1);
-    	priorityButtonPanel.add(qbutton2);
-    	priorityButtonPanel.add(qbutton3);
-    	priorityButtonPanel.add(qbutton4);
-    	priorityButtonPanel.add(qbutton5);
-    	
-    	this.add(priorityTextPanel);
-    	priorityTextPanel.add(priority);
-    	priorityTextPanel.add(nextButton);
-    	nextButton.setEnabled(false);
-    	priorityTextPanel.add(questionArea);
-    }
-	
 
 }

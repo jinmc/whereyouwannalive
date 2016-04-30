@@ -17,8 +17,6 @@ public class Controller {
 	public int booleanCount = 0;
 //	ArrayList<CityArea> cities;
 	
-
-	
 	public Question[] questionArray;
 	public boolean[] answerArray;
 	
@@ -36,7 +34,12 @@ public class Controller {
 		questionArray = new Question[5];
 		answerArray = new boolean[5];
 		
-		BT = new BinaryTree(cities);
+//		cities
+		
+		
+//		BT = new BinaryTree(cities);
+		
+		
 		
 		
 	}
@@ -45,7 +48,6 @@ public class Controller {
 		
 		Model model = new Model();
 		
-		 
 		Controller controller = new Controller(model);
 
 		View view = new View(model, controller);
