@@ -12,7 +12,8 @@ import javax.swing.JFileChooser;
 /**
  * This is the model class.
  * It will take in the data of cities of US.
- * @author Chong
+ * @author Jonathan Cagadas
+ * @author Jinmo Chong
  *
  */
 
@@ -20,6 +21,10 @@ public class Model {
 	
 	public HashMap<String, Question> questionMap;
 
+	/**
+	 * Asks for a file
+	 * @return a file
+	 */
 	public File start(){
 		
 		JFileChooser fileChooser = new JFileChooser();
@@ -33,6 +38,11 @@ public class Model {
 		
 	}
 	
+	/**
+	 * Takes a file, reads it, and converts it into an arraylist of strings.
+	 * @param file
+	 * @return an array list of strings
+	 */
 	public ArrayList<String> readFile(File file) {
 		ArrayList<String> al = new ArrayList<String>();
 		try {
@@ -52,6 +62,11 @@ public class Model {
 		return al;
 		}
 	
+	/**
+	 * Takes an arraylist of strings and returns an arraylist of CityArea objects
+	 * @param list arraylist of strings
+	 * @return an array of CityArea objects
+	 */
 	public ArrayList<CityArea> makeCities(ArrayList<String> list){
 		ArrayList<CityArea> cityData = new ArrayList<CityArea>();
 		
@@ -64,14 +79,15 @@ public class Model {
 			city.setTemperature(Double.valueOf(data[2]));
 			city.setCostOfLiving(Double.valueOf(data[3]));
 			city.setCrimeRate(Double.valueOf(data[4]));
-			System.out.println(city.getCityName());
-			System.out.println(city.getCrimeRate());
 			cityData.add(city);
 		}
 		return cityData;
 	}
 	
 	
+	/**
+	 * Constructor for model. Builds questions.
+	 */
 	public Model() {
 		
 		

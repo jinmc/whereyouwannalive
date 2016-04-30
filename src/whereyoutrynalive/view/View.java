@@ -14,6 +14,13 @@ import whereyoutrynalive.model.CityArea;
 import whereyoutrynalive.model.Model;
 import whereyoutrynalive.model.Question;
 
+/**
+ * This is the view class of MVC. This class extends JFrame. All of the swing elements are found
+ * in this class.
+ * @author Jonathan Cagadas
+ * @author Jinmo Chong
+ *
+ */
 public class View extends JFrame {
 	
 	private static final LayoutManager FlowLayout = null;
@@ -45,6 +52,12 @@ public class View extends JFrame {
 	
 	ArrayList<CityArea> finalList;
 	
+	/**
+	 * Constructor for the view class.
+	 * Builds the GUI.
+	 * @param model
+	 * @param controller
+	 */
 	public View(Model model, Controller controller) {
 		this.model = model;
 		this.controller = controller;
@@ -78,6 +91,9 @@ public class View extends JFrame {
 	}
 	
 	
+	/**
+	 * First panel with the priority of characteristics.
+	 */
 	public void display1() {
         layOutComponents1();
         attachListenersToComponents();
@@ -86,6 +102,9 @@ public class View extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Holds the questions.
+	 */
 	private void display2() {
 		revalidate();
 		repaint();
@@ -97,6 +116,9 @@ public class View extends JFrame {
 	}	
 	
 	
+	/**
+	 * Displays the result.
+	 */
 	private void display3() {
 		revalidate();
 		repaint();	
@@ -107,6 +129,9 @@ public class View extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Layout components for the first display.
+	 */
 	private void layOutComponents1() {
     	this.setLayout(new GridLayout(2, 1));
     	this.add(priorityButtonPanel);
@@ -125,7 +150,10 @@ public class View extends JFrame {
     	nextButton.setEnabled(false);
     	priorityTextPanel.add(questionArea);
     }
-	
+
+	/**
+	 * Layout components for the second display.
+	 */
 	private void layOutComponents2() {
     	this.setLayout(new GridLayout(3, 1));
     	this.add(questionPanel);
@@ -138,6 +166,9 @@ public class View extends JFrame {
     	questionButtonPanel.add(noButton);
 	}
 	
+	/**
+	 * Layout components for the third display.
+	 */
 	private void layOutComponents3() {
 //		this.setLayout(new LayoutManager());
 		this.add(finalPanel);
@@ -154,6 +185,12 @@ public class View extends JFrame {
 	}
 	
 
+	/**
+	 * Action listeners for yes/no buttons.
+	 */
+	/**
+	 * 
+	 */
 	private void attachListenersToComponents2() {
  		yesButton.addActionListener(new ActionListener() {
  			@Override
@@ -215,6 +252,9 @@ public class View extends JFrame {
 	}
 
 	
+	/**
+	 * Action listeners for the 5 different characteristics and next button.
+	 */
 	private void attachListenersToComponents() {
         qbutton1.addActionListener(new ActionListener() {
             @Override
@@ -297,6 +337,10 @@ public class View extends JFrame {
 	}
 
 
+	/**
+	 * Sets the priority for the questions.
+	 * @param string
+	 */
 	private void setPriorityCount(String string) {
 		
 		Question thisQuestion = (Question) model.questionMap.get(string);

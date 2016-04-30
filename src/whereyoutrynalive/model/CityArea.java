@@ -1,5 +1,11 @@
 package whereyoutrynalive.model;
 
+/**
+ * A class that holds a city and the 5 qualities of that particular city.
+ * @author Jonathan Cagadas
+ * @author Jinmo Chong
+ *
+ */
 public class CityArea {
 	
 	private String cityName;

@@ -1,5 +1,13 @@
 package whereyoutrynalive.model;
 
+/**
+ * This question class holds a specific question that we will ask the user. This gets information from
+ * the user on what they prefer in a city.
+ * 
+ * @author Jonathan Cagadas
+ * @author Jinmo Chong
+ *
+ */
 public class Question {
 	
 	private int priority; // should be 1~5

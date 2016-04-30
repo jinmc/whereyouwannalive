@@ -8,6 +8,14 @@ import whereyoutrynalive.model.Model;
 import whereyoutrynalive.model.Question;
 import whereyoutrynalive.view.View;
 
+/**
+ * 
+ * This class is the controller of the MVC framework. This is where the arraylist is sorted based
+ * on a certain criteria.
+ * @author Jonathan Cagadas
+ * @author Jinmo Chong
+ *
+ */
 public class Controller {
 	
 	Model model;
@@ -22,14 +30,14 @@ public class Controller {
 	
 	public BinaryTree BT;
 
+	/**
+	 * Constructor for controller. Has a model as a parameter.
+	 * @param model
+	 */
 	public Controller(Model model) {
 		File selectedFile = model.start();
 		ArrayList<String> rawData = model.readFile(selectedFile);
 		this.cities = model.makeCities(rawData);
-		for (CityArea city : cities){
-			System.out.println(city.getCityName());
-		}
-		
 		this.model = model;
 		questionArray = new Question[5];
 		answerArray = new boolean[5];
@@ -38,6 +46,14 @@ public class Controller {
 	
 	}
 	
+	/**
+	 * This is the sorting algorithm. It takes an arraylist of cities, and then sorts them
+	 * based on a specific parameter.
+	 * @param cities an array of cities
+	 * @param questionType a specific question time
+	 * @param topbot top or bottom half of the sort
+	 * @return
+	 */
 	public ArrayList<CityArea> topHalf(ArrayList<CityArea> cities, String questionType, boolean topbot){
 		ArrayList<Comparison> unsorted = new ArrayList<Comparison>();
 		ArrayList<Comparison> sorted = new ArrayList<Comparison>();
@@ -46,7 +62,6 @@ public class Controller {
 			for (CityArea city : cities){
 				Comparison comparison = new Comparison(city.getCityName(), city.getTemperature());
 				unsorted.add(comparison);
-				System.out.println(comparison.getName());
 			}
 		}
 		if (questionType == "Cost of Living"){
@@ -94,7 +109,6 @@ public class Controller {
 				}
 			}
 			Comparison sortedComparison = new Comparison(topCity, topValue);
-			System.out.println(sortedComparison.getValue());
 			sorted.add(sortedComparison);
 		}
 		CityArea currentCity = null;
@@ -119,12 +133,13 @@ public class Controller {
 				sortedCities.add(currentCity);
 			}
 		}
-		for (CityArea city : sortedCities){
-			System.out.println(city.getCityName());
-		}
 		return sortedCities;
 	}
 
+	/**
+	 * The main method. Creates instances of the controller, model and view.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 
@@ -133,7 +148,6 @@ public class Controller {
 		Controller controller = new Controller(model);
 		View view = new View(model, controller);
 		view.display1();
-		controller.topHalf(controller.cities, "Climate", false);
 				
 	}
 
